@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CenteredIntervalTree", "CenteredIntervalTree\CenteredIntervalTree.csproj", "{6A9834F0-CA56-4EBB-BF39-673B0AC0FDBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CenteredIntervalTreeTests", "CenteredIntervalTreeTests\CenteredIntervalTreeTests.csproj", "{FD274592-E540-48F2-A19F-72306FB8F9E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A9834F0-CA56-4EBB-BF39-673B0AC0FDBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A9834F0-CA56-4EBB-BF39-673B0AC0FDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A9834F0-CA56-4EBB-BF39-673B0AC0FDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A9834F0-CA56-4EBB-BF39-673B0AC0FDBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD274592-E540-48F2-A19F-72306FB8F9E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD274592-E540-48F2-A19F-72306FB8F9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD274592-E540-48F2-A19F-72306FB8F9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD274592-E540-48F2-A19F-72306FB8F9E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
