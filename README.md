@@ -1,4 +1,4 @@
-# CenteredIntervalTree
+# Centered Interval Tree
 
 Inpired by https://github.com/mbuchetics/RangeTree
 
