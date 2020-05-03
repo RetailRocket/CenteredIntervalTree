@@ -1,3 +1,5 @@
+![.NET Core](https://github.com/RetailRocket/CenteredIntervalTree/workflows/.NET%20Core/badge.svg)
+
 # Centered Interval Tree
 
 Inpired by https://github.com/mbuchetics/RangeTree, but I've add ability to use open, closed and infinity boundary of interval.
