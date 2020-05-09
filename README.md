@@ -9,6 +9,10 @@ From [Wikipedia](http://en.wikipedia.org/wiki/Interval_tree):
 
 Based on [Intravl Library](https://github.com/RetailRocket/Interval) and [Interval Operations Library](https://github.com/RetailRocket/Interval.Operations)
 
+## Model ###
+
+![alternative text](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/RetailRocket/CenteredIntervalTree/master/readme/plantuml/DomainModel.puml)
+
 ## Usage ###
 
 You can build tree by list of interval:

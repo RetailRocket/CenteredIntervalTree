@@ -1,0 +1,23 @@
+@startuml
+
+abstract ICenteredIntervalTreeNode {
+    Query(TPoin point): IntervalValuePair<TPoint, TValue>[]
+}
+
+class EmptyCenteredIntervalTreeNode {}
+
+class CenteredIntervalTreeNode {
+    IntervalValuePair: IntervalValuePair<TPoint, TValue>[]
+}
+
+class IntervalValuePair {
+    Interval: Interval<TPoint>
+    Value: TValue
+}
+
+CenteredIntervalTreeNode "1" ... "*" IntervalValuePair
+
+ICenteredIntervalTreeNode <|-- EmptyCenteredIntervalTreeNode
+ICenteredIntervalTreeNode <|-- CenteredIntervalTreeNode
+
+@enduml

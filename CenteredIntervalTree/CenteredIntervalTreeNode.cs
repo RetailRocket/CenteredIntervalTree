@@ -22,13 +22,13 @@ namespace CenteredIntervalTree
             this.Center = center;
         }
 
-        public ICenteredIntervalTreeNode<TPoint, TValue> LeftBranch { get; }
+        private ICenteredIntervalTreeNode<TPoint, TValue> LeftBranch { get; }
 
-        public ICenteredIntervalTreeNode<TPoint, TValue> RightBranch { get; }
+        private ICenteredIntervalTreeNode<TPoint, TValue> RightBranch { get; }
 
-        public List<IntervalValuePair<TPoint, TValue>> CenterBelongedRangeValuePairList { get; }
+        private List<IntervalValuePair<TPoint, TValue>> CenterBelongedRangeValuePairList { get; }
 
-        public TPoint Center { get; }
+        private TPoint Center { get; }
 
         public List<IntervalValuePair<TPoint, TValue>> Query(
             TPoint point)
