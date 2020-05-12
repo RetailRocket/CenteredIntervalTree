@@ -15,7 +15,7 @@ Based on [Intravl Library](https://github.com/RetailRocket/Interval) and [Interv
 
 ## Usage ###
 
-For build interval tree library has ```CenteredIntervalTreeFactory``` it creates tree by list of IntervalValuePair
+For build interval tree library, has ```CenteredIntervalTreeFactory``` it allows to create tree by list of IntervalValuePair
 
 ```csharp
 
