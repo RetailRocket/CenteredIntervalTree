@@ -16,7 +16,7 @@ namespace CenteredIntervalTreeTests.ComparerTests
             string point)
         {
             var intervalTree = CenteredIntervalTreeFactory
-                .Buid(
+                .Build(
                     intervalValuePairList: new List<IntervalValuePair<string, string>>
                     {
                         new IntervalValuePair<string, string>(
@@ -44,7 +44,7 @@ namespace CenteredIntervalTreeTests.ComparerTests
             string query)
         {
             var intervalTree = CenteredIntervalTreeFactory
-                .Buid(
+                .Build(
                     intervalValuePairList: new List<IntervalValuePair<string, string>>
                     {
                         new IntervalValuePair<string, string>(

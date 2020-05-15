@@ -7,13 +7,13 @@ namespace CenteredIntervalTree
 
     public static class CenteredIntervalTreeFactory
     {
-        public static ICenteredIntervalTreeNode<TPoint, TValue> Buid<TPoint, TValue>(
+        public static ICenteredIntervalTreeNode<TPoint, TValue> Build<TPoint, TValue>(
             List<IntervalValuePair<TPoint, TValue>> intervalValuePairList,
             IComparer<TPoint> comparer)
         {
             if (!intervalValuePairList.Any())
             {
-                return new EmptyCenteredIntervalTreeFactory<TPoint, TValue>();
+                return new EmptyCenteredIntervalTree<TPoint, TValue>();
             }
 
             var center = FindCenterBoundPoint(
@@ -46,10 +46,10 @@ namespace CenteredIntervalTree
                 comparer: comparer);
 
             return new CenteredIntervalTreeNode<TPoint, TValue>(
-                leftBranch: Buid<TPoint, TValue>(
+                leftBranch: Build<TPoint, TValue>(
                     intervalValuePairList: leftBranch,
                     comparer: comparer),
-                rightBranch: Buid<TPoint, TValue>(
+                rightBranch: Build<TPoint, TValue>(
                     intervalValuePairList: rightBranch,
                     comparer: comparer),
                 centerBelongedRangeValuePairList: centerBelonged.OrderBy(
