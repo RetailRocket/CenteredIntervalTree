@@ -2,8 +2,7 @@ namespace CenteredIntervalTree
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Operations;
-    using Operations.Comparers;
+    using Interval.IntervalBound;
 
     public static class CenteredIntervalTreeFactory
     {
@@ -28,7 +27,7 @@ namespace CenteredIntervalTree
             {
                 var interval = intervalValuePair.Interval;
                 if (interval.Contains(point: center, comparer: comparer) ||
-                    interval.HasBoundaryPont(point: center, comparer: comparer))
+                    interval.IsBoundaryPoint(point: center, comparer: comparer))
                 {
                     centerBelonged.Add(intervalValuePair);
                 }
@@ -42,8 +41,7 @@ namespace CenteredIntervalTree
                 }
             }
 
-            var intervalComparer = new IntervalComparer<TPoint>(
-                comparer: comparer);
+            var lowerBoundComparer = new LowerBoundComparer<TPoint>(comparer);
 
             return new CenteredIntervalTreeNode<TPoint, TValue>(
                 leftBranch: Build<TPoint, TValue>(
@@ -53,19 +51,19 @@ namespace CenteredIntervalTree
                     intervalValuePairList: rightBranch,
                     comparer: comparer),
                 centerBelongedRangeValuePairList: centerBelonged.OrderBy(
-                        kv => kv.Interval,
-                        comparer: intervalComparer)
+                        kv => kv.Interval.LowerBound,
+                        comparer: lowerBoundComparer)
                     .ToList(),
                 center: center,
                 comparer: comparer);
         }
 
         private static TPoint FindCenterBoundPoint<TPoint>(
-            IEnumerable<Interval.Interval<TPoint>> intervalList,
+            IEnumerable<Interval.IInterval<TPoint>> intervalList,
             IComparer<TPoint> pointComparer)
         {
             var points = intervalList.SelectMany(
-                    i => i.GetBoundPoints())
+                    i => i.GetBoundariesPoint())
                 .OrderBy(p => p, pointComparer)
                 .ToArray();
 

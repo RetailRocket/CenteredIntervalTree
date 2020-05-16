@@ -3,8 +3,7 @@ namespace CenteredIntervalTreeTests.ComparerTests
     using System;
     using System.Collections.Generic;
     using CenteredIntervalTree;
-    using Interval.IntervalBound.LowerBound;
-    using Interval.IntervalBound.UpperBound;
+    using Interval;
     using Xunit;
 
     public class CharsWithDifferentCasesCanBeCountedAsEqual
@@ -20,9 +19,10 @@ namespace CenteredIntervalTreeTests.ComparerTests
                     intervalValuePairList: new List<IntervalValuePair<string, string>>
                     {
                         new IntervalValuePair<string, string>(
-                            interval: new Interval.Interval<string>(
-                                lowerBound: new ClosedLowerBound<string>(point),
-                                upperBound: new ClosedUpperBound<string>(point)),
+                            interval: (Interval<string>)IntervalFactory.BuildClosedInterval(
+                                lowerBoundaryPoint: point,
+                                upperBoundaryPoint: point,
+                                comparer: Comparer<string>.Default),
                             value: "Value"),
                     },
                     comparer: StringComparer.OrdinalIgnoreCase);
@@ -48,9 +48,10 @@ namespace CenteredIntervalTreeTests.ComparerTests
                     intervalValuePairList: new List<IntervalValuePair<string, string>>
                     {
                         new IntervalValuePair<string, string>(
-                            interval: new Interval.Interval<string>(
-                                lowerBound: new ClosedLowerBound<string>(point),
-                                upperBound: new ClosedUpperBound<string>(point)),
+                            interval: (Interval<string>)IntervalFactory.BuildClosedInterval(
+                                lowerBoundaryPoint: point,
+                                upperBoundaryPoint: point,
+                                comparer: Comparer<string>.Default),
                             value: "Value"),
                     },
                     comparer: StringComparer.OrdinalIgnoreCase);

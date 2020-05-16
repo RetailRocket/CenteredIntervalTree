@@ -1,7 +1,6 @@
 namespace CenteredIntervalTree
 {
     using System.Collections.Generic;
-    using Operations;
 
     public class CenteredIntervalTreeNode<TPoint, TValue>
         : ICenteredIntervalTreeNode<TPoint, TValue>
@@ -40,8 +39,8 @@ namespace CenteredIntervalTree
                 var interval = centerBelongedRangeValue.Interval;
 
                 if (interval.LowerBound.CompareToPoint(
-                        point: point,
-                        comparer: this.comparer) > 0)
+                    point: point,
+                    comparer: this.comparer) > 0)
                 {
                     break;
                 }

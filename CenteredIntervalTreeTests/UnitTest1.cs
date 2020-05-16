@@ -18,14 +18,16 @@ namespace CenteredIntervalTreeTests
                     intervalValuePairList: new List<IntervalValuePair<int, string>>
                     {
                         new IntervalValuePair<int, string>(
-                            interval: new Interval<int>(
-                                lowerBound: new OpenLowerBound<int>(0),
-                                upperBound: new OpenUpperBound<int>(10)),
+                            interval: (Interval<int>)IntervalFactory.BuildOpenInterval(
+                                lowerBoundaryPoint: 0,
+                                upperBoundaryPoint: 10,
+                                comparer: Comparer<int>.Default),
                             value: "A"),
                         new IntervalValuePair<int, string>(
-                            interval: new Interval<int>(
-                                lowerBound: new ClosedLowerBound<int>(0),
-                                upperBound: new ClosedUpperBound<int>(10)),
+                            interval: (Interval<int>)IntervalFactory.BuildClosedInterval(
+                                lowerBoundaryPoint: 0,
+                                upperBoundaryPoint: 10,
+                                comparer: Comparer<int>.Default),
                             value: "B"),
                     },
                     comparer: Comparer<int>.Default);
@@ -62,14 +64,16 @@ namespace CenteredIntervalTreeTests
                     intervalValuePairList: new List<IntervalValuePair<string, string>>
                     {
                         new IntervalValuePair<string, string>(
-                            interval: new Interval<string>(
-                                lowerBound: new OpenLowerBound<string>("a"),
-                                upperBound: new OpenUpperBound<string>("z")),
+                            interval: (Interval<string>)IntervalFactory.BuildOpenInterval(
+                                lowerBoundaryPoint: "a",
+                                upperBoundaryPoint: "z",
+                                comparer: Comparer<string>.Default),
                             value: "FIRST"),
                         new IntervalValuePair<string, string>(
-                            interval: new Interval<string>(
-                                lowerBound: new ClosedLowerBound<string>("A"),
-                                upperBound: new ClosedUpperBound<string>("Z")),
+                            interval: (Interval<string>)IntervalFactory.BuildClosedInterval(
+                                lowerBoundaryPoint: "A",
+                                upperBoundaryPoint: "Z",
+                                comparer: Comparer<string>.Default),
                             value: "SECOND"),
                     },
                     comparer: StringComparer.OrdinalIgnoreCase);
